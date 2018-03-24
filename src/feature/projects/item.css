@@ -1,0 +1,44 @@
+/* .item-container {
+  margin-top: 1rem;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.item-title {
+  padding-left: 0.2rem;
+  text-align: left;
+}
+
+.item-content-container {
+  padding: 0.2rem 0.3rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.item-img {
+  max-width: 38.2vw;
+  max-height: 20.5vw;
+  display: block;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: url(http://notrealdomain2.com/newbanner.png) no-repeat;
+}
+
+.item-desc {
+  flex: 1;
+}
+
+.item-action {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.project-show {
+  background-color: white;
+}
+
+.project-show > img {
+  display: block;
+  width: 100%;
+} */

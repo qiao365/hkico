@@ -1,0 +1,88 @@
+
+
+
+
+/*pro_info*/
+.pro_info {
+	margin-top: 50px;
+	padding-top: 48px;
+}
+.pro_top {
+	margin-bottom: 48px;
+}
+.pro_top span {
+	font-size: 20px;
+	line-height: 28px;
+	color: #111111;
+}
+.pro_top span i {
+	font-size: 20px;
+	color: #F05F40;
+	line-height: 28px;
+}
+.thumbnail {
+	/*height: 290px;*/
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+.thumbnail .caption {
+	position: relative;
+	min-height: 173px;
+	color: rgba(0,0,0,0.54);
+	padding: 9px 10px;
+	background: #FFFFFF;
+}
+.thumbnail .caption h3 {
+	font-size: 16px;
+	color: #111111;
+	line-height: 24px;
+}
+.caption .deploy span {
+	font-size: 14px;
+	line-height: 22px;
+	color: rgba(0,0,0,0.38);
+}
+
+/*进度条*/
+.progress {
+	height: 10px;
+	margin: 8px 0;
+}
+.progress-bar {
+	font-size: 12px;
+	line-height: 10px;
+}
+
+.caption .price {
+	overflow: hidden;
+}
+.caption .price span {
+	font-size: 14px;
+	line-height: 40px;
+	color: rgba(0,0,0,0.38);
+}
+.caption .price span i {
+	font-size: 24px;
+	color: #F05F40;
+	line-height: 32px;
+}
+.caption .price span:first-child {
+	float: left;
+}
+.caption .price span:last-child {
+	float: right;
+}
+
+
+
+@media (max-width: 768px) {
+	/*nav*/
+	#bs-example-navbar-collapse-1 {
+		margin-left: -15px;
+	}
+	.container-fluid {
+		padding-left: 15px;
+	}
+}
