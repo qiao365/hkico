@@ -18,7 +18,7 @@ class ProjectItemComponent extends Component {
     const progressStyle = {width: funded + '%'};
     const funedStyle = {color: '#F05F40'};
     if(funded > 50) {
-      funedStyle.color: '#FFF'
+      funedStyle.color = '#FFF';
     }
     return (
       <div className="col-sm-12 col-md-4">
