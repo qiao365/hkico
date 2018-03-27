@@ -34,7 +34,7 @@ class ProjectShowPage extends Component {
   }
   render() {
     const { projectId, project, part } = this.state;
-    const funded = project.completed / project.total;
+    const funded = project.completed / project.total * 100;
     const progressStyle = {width: funded + '%'};
     return (
       <div className="main-container">
@@ -59,7 +59,7 @@ class ProjectShowPage extends Component {
                           <p>1,435 backers</p>
                       </div>
                       <p style={{'marginTop': '16px', 'marginBottom': '24px'}} className="color-Opcity54 fontSize14">{project.remarks}</p>
-                      <button className="theme-Bgcolor readme-btn" onClick={this.remindmeClick}>REMIND ME</button>
+                      <button className="theme-Bgcolor readme-btn" onClick={this.remindmeClick}>PARTCIPATE IN</button>
                   </div>
               </div>
           </div>
@@ -147,8 +147,7 @@ class ProjectShowPage extends Component {
           </div>
           <div className="m-main-center-content-container margin-top-24">
               <div className="header-title flex flex-align-center">
-                  <p className="theme-Fontcolor">Campaign</p>
-                  <p>Comments</p>
+                  <p className="theme-Fontcolor">Intorduce</p>
               </div>
               <div className="m-lisItem-wrapper">
                   <div className="flex  white-Bgcolor" style={{padding: '24px', 'marginTop': '1px'}}>
