@@ -9,7 +9,7 @@ class ProjectItemComponent extends Component {
   render() {
     const { item } = this.props;
     const funded = item.completed / item.total * 100;
-    const progressStyle = {width: item.funded + '%'};
+    const progressStyle = {width: funded + '%'};
     return (
       <div className="col-sm-12 col-md-4">
         <div className="thumbnail" onClick={this.onDetailClickHandle}>
@@ -23,12 +23,12 @@ class ProjectItemComponent extends Component {
               <span>End Time </span>
             </div>
             <div className="progress">
-              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={item.funded} aria-valuemin="0" aria-valuemax="100" style={progressStyle}>
-                {item.funded}
+              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={funded} aria-valuemin="0" aria-valuemax="100" style={progressStyle}>
+                {funded}%
               </div>
             </div>
             <div className="price">
-              <span><i>{item.funded}%</i>已完成</span>
+              <span><i>{item.completed}</i>已完成</span>
               <span></span>
             </div>
           </div>
