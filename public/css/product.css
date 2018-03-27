@@ -54,6 +54,11 @@
 	font-size: 12px;
 	line-height: 10px;
 }
+.progress-funded {
+	display: block;
+	position: absolute;
+	left: 40%;
+}
 
 .caption .price {
 	overflow: hidden;
