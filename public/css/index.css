@@ -48,7 +48,7 @@
 	color: #111111;
 	float: left;
 }
-.pro_top span:last-child {
+.pro_top span:last-child a {
 	font-size: 14px;
 	line-height: 28px;
 	color: #F05F40;

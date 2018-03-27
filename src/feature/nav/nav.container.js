@@ -74,7 +74,6 @@ class NavToolContianer extends Component {
               <li><a href="#"><FormattedMessage id='global.msg' description='say hello to Howard.' defaultMessage='NEWS' /></a></li>
               <li><a href="#">ABOUT US</a></li>
             </ul>
-            {login}
           </div>
         </div>
       </nav>
