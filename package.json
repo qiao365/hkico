@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "intl": "^1.2.5",
+    "qrcode.react": "^0.8.0",
     "react": "^16.2.0",
     "react-cookie": "^2.1.4",
     "react-dom": "^16.2.0",

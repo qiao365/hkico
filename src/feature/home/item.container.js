@@ -8,7 +8,7 @@ class ProjectItemComponent extends Component {
   render() {
     const { item } = this.props;
     return (
-      <div className="col-sm-12 col-md-3">
+      <div className="col-sm-12 col-md-4 col-lg-3">
         <div className="thumbnail">
           <img src="../images/can_01.png"/>
           <div className="caption">

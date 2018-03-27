@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Page } from '../../component';
+import { Partcipate } from './';
 import './show.css';
 import { service } from '../../manager';
 
@@ -7,7 +7,8 @@ class ProjectShowPage extends Component {
   constructor() {
     super();
     this.state = {
-      project: {}
+      project: {},
+      part: ''
     };
   }
   componentWillMount() {
@@ -20,8 +21,19 @@ class ProjectShowPage extends Component {
       });
     })
   }
+  remindmeClick = (event) => {
+    console.log()
+    this.setState({part: <Partcipate callback={this.removePart} id={this.state.projectId} toCodePageHandle={this.toCodePage} />})
+  }
+  removePart = (event) => {
+    this.setState({part: ''})
+  }
+  toCodePage = (projectId) => {
+    const { history } = this.props;
+    history.push("/project/remind/" + projectId);
+  }
   render() {
-    const { projectId, project } = this.state;
+    const { projectId, project, part } = this.state;
     const funded = project.completed / project.total;
     const progressStyle = {width: funded + '%'};
     return (
@@ -47,7 +59,7 @@ class ProjectShowPage extends Component {
                           <p>1,435 backers</p>
                       </div>
                       <p style={{'marginTop': '16px', 'marginBottom': '24px'}} className="color-Opcity54 fontSize14">{project.remarks}</p>
-                      <button className="theme-Bgcolor readme-btn">REMIND ME</button>
+                      <button className="theme-Bgcolor readme-btn" onClick={this.remindmeClick}>REMIND ME</button>
                   </div>
               </div>
           </div>
@@ -161,6 +173,7 @@ class ProjectShowPage extends Component {
                   </div>
               </div>
           </div>
+          {part}
       </div>
     )
   }

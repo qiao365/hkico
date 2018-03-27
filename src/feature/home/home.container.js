@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Item } from './';
-import { service, util } from '../../manager';
+import { service } from '../../manager';
 
 class HomePage extends Component {
 
@@ -23,39 +23,6 @@ class HomePage extends Component {
   render() {
     const { projectList } = this.state;
     return (
-      /*
-      <div>
-        <header className="masthead text-center text-white d-flex">
-          <div className="container my-auto">
-            <div className="row">
-              <div className="col-lg-10 mx-auto">
-                <h1 className="text-uppercase">
-                  <strong>这里是首页</strong>
-                </h1>
-                <hr/>
-              </div>
-              <div className="col-lg-8 mx-auto">
-                <p className="text-faded mb-5">HK.ICO!</p>
-                <a className="btn btn-primary btn-xl js-scroll-trigger" href="#/project/list">项目一览</a>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <section className="bg-primary" id="about">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-8 mx-auto text-center">
-                <h2 className="section-heading text-white">发起项目，探索未来!</h2>
-                <hr className="light my-4"/>
-                <p className="text-faded mb-4">创建自己的项目，发掘潜力！你的潜力可能超乎想象。</p>
-                <a className="btn btn-light btn-xl js-scroll-trigger" href="#/project/create">不要怂!</a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      */
       <div>
         <link href="../css/index.css" rel="stylesheet"/>
         <section className="banner">

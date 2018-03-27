@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>Material/Icons black/fullscreen</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Material/Icons-black/fullscreen" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M5,16 L3,16 L3,21 L8,21 L8,19 L5,19 L5,16 L5,16 Z M3,8 L5,8 L5,5 L8,5 L8,3 L3,3 L3,8 L3,8 Z M19,19 L16,19 L16,21 L21,21 L21,16 L19,16 L19,19 L19,19 Z M16,3 L21,3 L21,8 L19,8 L19,5 L16,5 L16,3 Z M3,11 L21,11 L21,13 L3,13 L3,11 Z" id="Shape" fill="#F05F40"></path>
+    </g>
+</svg>

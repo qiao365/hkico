@@ -17,6 +17,7 @@ class App extends Component {
             <Route path="/project/list/media" component={features.ProjectList} />
             <Route path="/project/create" component={features.ProjectCreate} />
             <Route path="/project/show/:projectId" component={features.ProjectShow} />
+            <Route path="/project/remind/:projectId" component={features.ProjectRemind} />
             <Route path="/project/:projectId/contract/:contractId" component={features.InfoContract} />
             <Route path="/account/profile/:accountId" component={features.AccountProfile} />
             <Route path="/account/edit/:accountId" component={features.AccountEdit} />

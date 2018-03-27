@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './item.css';
-import { Button } from '../../component';
 
 class ProjectItemComponent extends Component {
   onDetailClickHandle = (event) => {
@@ -12,21 +11,6 @@ class ProjectItemComponent extends Component {
     const funded = item.completed / item.total;
     const progressStyle = {width: item.funded + '%'};
     return (
-      /*
-      <div className="item-container">
-        <div className="item-title">{item.name}</div>
-        <div className="item-content-container">
-          <img src={item.logo} className="item-img" alt={item.desc}/>
-            <label className="item-desc">
-            {item.desc}
-            </label>
-            <div className="item-action">
-              <Button label="详情" clickHandle={this.onDetailClickHandle}/>
-              <span>{item.status}</span>
-            </div>
-        </div>
-      </div>
-      */
       <div className="col-sm-12 col-md-4">
         <div className="thumbnail" onClick={this.onDetailClickHandle}>
           <img src="../images/can_01.png"/>
@@ -44,7 +28,7 @@ class ProjectItemComponent extends Component {
               </div>
             </div>
             <div className="price">
-              <span><i>{item.completed * 1}</i>已完成</span>
+              <span><i>{item.completed * 1}%</i>已完成</span>
               <span></span>
             </div>
           </div>
