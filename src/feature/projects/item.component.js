@@ -8,7 +8,7 @@ class ProjectItemComponent extends Component {
   }
   render() {
     const { item } = this.props;
-    const funded = item.completed / item.total * 100;
+    let funded = item.completed / item.total * 100;
     funded = funded.toFixed(4);
     if(funded > 10) {
       funded = Math.round(funded);
@@ -16,7 +16,7 @@ class ProjectItemComponent extends Component {
       funded = Math.toFixed(2);
     }
     const progressStyle = {width: funded + '%'};
-    const funedStyle = {color: '#F05F40'};
+    let funedStyle = {color: '#F05F40'};
     if(funded > 50) {
       funedStyle.color = '#FFF';
     }
