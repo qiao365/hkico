@@ -23,26 +23,27 @@ class ProjectShowPage extends Component {
   render() {
     const { projectId, project } = this.state;
     const funded = project.completed / project.total;
+    const progressStyle = {width: funded + '%'};
     return (
       <div className="main-container">
           <div className="main-top-container flex">
               <div className="main-top-left-section">
-                  <img src="../images/project_05.png" alt="" />
+                  <img src="../images/can_01.png" alt="" />
               </div>
               <div className="main-top-right-section white-Bgcolor">
                   <p className="fontSize24">
                       {project.name}
                   </p>
                   <p style={{'marginTop': '16px','marginBottom': '16px'}}>
-                      <span className="theme-Fontcolor fontSize32">$13,000</span>
+                      <span className="theme-Fontcolor fontSize32">${project.total * 1}</span>
                       <span className="color-Opcity54 fontSize18">pledged</span>
                   </p>
                   <div>
                       <p className="loadbase-line">
-                          <span className="theme-Bgcolor loadbase-line-inside "></span>
+                          <span className="theme-Bgcolor loadbase-line-inside" style={progressStyle}></span>
                       </p>
                       <div className="flex flex-pack-justify margin-top-8">
-                          <p className="theme-Fontcolor">{funded} funded</p>
+                          <p className="theme-Fontcolor">{project.completed * 1} funded</p>
                           <p>1,435 backers</p>
                       </div>
                       <p style={{'marginTop': '16px', 'marginBottom': '24px'}} className="color-Opcity54 fontSize14">{project.remarks}</p>

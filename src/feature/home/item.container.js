@@ -10,7 +10,7 @@ class ProjectItemComponent extends Component {
     return (
       <div className="col-sm-12 col-md-3">
         <div className="thumbnail">
-          <img src="../images/project_01.png"/>
+          <img src="../images/can_01.png"/>
           <div className="caption">
             <h3>{item.name}</h3>
             <p>{item.remarks}</p>

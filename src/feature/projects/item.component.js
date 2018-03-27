@@ -10,7 +10,7 @@ class ProjectItemComponent extends Component {
   render() {
     const { item } = this.props;
     const funded = item.completed / item.total;
-    const progressStyle = {width: item.completed + '%'};
+    const progressStyle = {width: item.funded + '%'};
     return (
       /*
       <div className="item-container">
@@ -39,7 +39,7 @@ class ProjectItemComponent extends Component {
               <span>剩余时间 </span>
             </div>
             <div className="progress">
-              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={item.funded} aria-valuemin="0" aria-valuemax="100" style={{progressStyle}}>
+              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={item.funded} aria-valuemin="0" aria-valuemax="100" style={progressStyle}>
                 {item.funded}
               </div>
             </div>

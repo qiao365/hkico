@@ -31,7 +31,7 @@ class ProjectListPage extends Component {
         {
           projectList.map((projectItem, idx) => {
             return (
-              <ProjectItem key={projectItem.guid} item={projectItem} handleItemClick={this.handleItemClick}/>
+              <ProjectItem key={projectItem.id} item={projectItem} handleItemClick={this.handleItemClick}/>
             )
           })
         }

@@ -66,7 +66,7 @@ class HomePage extends Component {
         <section className="pro_info">
           <div className="pro_top">
             <span>Project Overview</span>
-            <span>VIEW ALL</span>
+            <span><a href="#/project/list">VIEW ALL</a></span>
           </div>
           <div className="pro_list row">
           {
@@ -81,7 +81,7 @@ class HomePage extends Component {
         <section className="initiate">
           <h1>Initiate a project, discover the future!</h1>
           <h2>There are no boundaries, keep go unleash your potential and create your own project.</h2>
-          <a className="doit" href="#/project/create">JUST DO IT</a>
+          <a className="doit" href="#">JUST DO IT</a>
         </section>
       </div>
             /*
