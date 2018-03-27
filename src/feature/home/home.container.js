@@ -12,7 +12,7 @@ class HomePage extends Component {
   }
 
   componentWillMount() {
-    service.findProjects(3).then((data) => {
+    service.findProjects(4).then((data) => {
       this.setState({
         projectList: data.list,
         count: data.count

@@ -44,7 +44,7 @@ class ProjectItemComponent extends Component {
               </div>
             </div>
             <div className="price">
-              <span><i>{item.completed}</i>已完成</span>
+              <span><i>{item.completed * 1}</i>已完成</span>
               <span></span>
             </div>
           </div>
