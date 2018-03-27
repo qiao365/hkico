@@ -15,6 +15,7 @@ class ProjectItemComponent extends Component {
     }else if(funded > 1) {
       funded = Math.toFixed(2);
     }
+    funded = funded * 1;
     const progressStyle = {width: funded + '%'};
     let funedStyle = {color: '#F05F40'};
     if(funded > 50) {
