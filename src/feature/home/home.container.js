@@ -1,8 +1,27 @@
 import React, { Component } from 'react';
+import { Item } from './';
+import { service, util } from '../../manager';
 
 class HomePage extends Component {
 
+  constructor() {
+    super();
+    this.state = {
+      projectList: []
+    };
+  }
+
+  componentWillMount() {
+    service.findProjects(3).then((data) => {
+      this.setState({
+        projectList: data.list,
+        count: data.count
+      });
+    })
+  }
+
   render() {
+    const { projectList } = this.state;
     return (
       /*
       <div>
@@ -50,6 +69,22 @@ class HomePage extends Component {
             <span>VIEW ALL</span>
           </div>
           <div className="pro_list row">
+          {
+            projectList.map((projectItem, idx) => {
+              return (
+                <Item key={projectItem.id} item={projectItem} />
+              )
+            })
+          }
+          </div>
+        </section>
+        <section className="initiate">
+          <h1>Initiate a project, discover the future!</h1>
+          <h2>There are no boundaries, keep go unleash your potential and create your own project.</h2>
+          <a className="doit" href="#/project/create">JUST DO IT</a>
+        </section>
+      </div>
+            /*
             <div className="col-sm-12 col-md-3">
               <div className="thumbnail">
                 <img src="../images/project_01.png"/>
@@ -90,14 +125,7 @@ class HomePage extends Component {
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="initiate">
-          <h1>Initiate a project, discover the future!</h1>
-          <h2>There are no boundaries, keep go unleash your potential and create your own project.</h2>
-          <a className="doit" href="#/project/create">JUST DO IT</a>
-        </section>
-      </div>
+            */
     )
   }
 }

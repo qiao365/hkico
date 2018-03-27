@@ -4,8 +4,9 @@
 	width: 100%;
 }
 .main {
-	height: 500px;
+	/* height: 500px; */
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 .item {
 	overflow: hidden;

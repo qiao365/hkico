@@ -9,6 +9,8 @@ class ProjectItemComponent extends Component {
   }
   render() {
     const { item } = this.props;
+    const funded = item.completed / item.total;
+    const progressStyle = {width: item.completed + '%'};
     return (
       /*
       <div className="item-container">
@@ -27,23 +29,23 @@ class ProjectItemComponent extends Component {
       */
       <div className="col-sm-12 col-md-4">
         <div className="thumbnail" onClick={this.onDetailClickHandle}>
-          <img src="../images/project_01.png"/>
+          <img src="../images/can_01.png"/>
           <div className="caption">
-            <h3>ARAMLEE | Convertible</h3>
-            <p>A new album of songs addressing mental health issues, addiction, and family dysfunction. Thank you for your support!</p>
+            <h3>{item.name}</h3>
+            <p>{item.abbr}</p>
             <div className="deploy">
-              <span>by Ryan Sohmer</span>
+              <span>创建人</span>
               &nbsp;丨&nbsp;
-              <span>17 hours ago </span>
+              <span>剩余时间 </span>
             </div>
             <div className="progress">
-              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style={{width: "80%"}}>
-                80%
+              <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={item.funded} aria-valuemin="0" aria-valuemax="100" style={{progressStyle}}>
+                {item.funded}
               </div>
             </div>
             <div className="price">
-              <span><i>$13,000</i>pledged</span>
-              <span>technology</span>
+              <span><i>{item.completed}</i>已完成</span>
+              <span></span>
             </div>
           </div>
         </div>

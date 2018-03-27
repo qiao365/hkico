@@ -1,27 +1,28 @@
 import React, { Component } from 'react';
 import { Page } from '../../component';
 import './show.css';
-import { remoteGetProjectList } from '../../manager';
+import { service } from '../../manager';
 
 class ProjectShowPage extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      project: {}
+    };
   }
   componentWillMount() {
-    const projectIdOfParam = this.props.match.params.projectId;
-    const { projectId } = this.state;
-    if (projectId !== projectIdOfParam) {
+    const projectId = this.props.match.params.projectId;
+    service.findProjectInfo(projectId).then((data) => {
       // get the projectInfo;
       this.setState({
-        projectId: projectIdOfParam,
-        projectInfo: remoteGetProjectList(1)[0]
+        projectId: projectId,
+        project: data.project
       });
-    }
+    })
   }
   render() {
-    const { projectId, projectInfo } = this.state;
-    console.log(projectInfo);
+    const { projectId, project } = this.state;
+    const funded = project.completed / project.total;
     return (
       <div className="main-container">
           <div className="main-top-container flex">
@@ -30,7 +31,7 @@ class ProjectShowPage extends Component {
               </div>
               <div className="main-top-right-section white-Bgcolor">
                   <p className="fontSize24">
-                      Trash cleaning robot controlled by you.
+                      {project.name}
                   </p>
                   <p style={{'marginTop': '16px','marginBottom': '16px'}}>
                       <span className="theme-Fontcolor fontSize32">$13,000</span>
@@ -41,10 +42,10 @@ class ProjectShowPage extends Component {
                           <span className="theme-Bgcolor loadbase-line-inside "></span>
                       </p>
                       <div className="flex flex-pack-justify margin-top-8">
-                          <p className="theme-Fontcolor">94% funded</p>
+                          <p className="theme-Fontcolor">{funded} funded</p>
                           <p>1,435 backers</p>
                       </div>
-                      <p style={{'marginTop': '16px', 'marginBottom': '24px'}} className="color-Opcity54 fontSize14">This project will only be funded if it reaches its goal by Sat, March 31 2018 9:44 PM AWST.</p>
+                      <p style={{'marginTop': '16px', 'marginBottom': '24px'}} className="color-Opcity54 fontSize14">{project.remarks}</p>
                       <button className="theme-Bgcolor readme-btn">REMIND ME</button>
                   </div>
               </div>
@@ -77,7 +78,6 @@ class ProjectShowPage extends Component {
                               <div className="something-produce-content">
                                   <p className="fontSize18">Taylor Swift</p>
                                   <p className="color-Opcity54  margin-top-8">We're here to put a dent in the universe. Otherwise why else even be here?</p>
-                                  <button className="sendMessage-btn margin-top-16">SEND MESSAGE</button>
                               </div>
                           </div>
                       </li>

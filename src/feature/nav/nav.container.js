@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
-import { withCookies, Cookies } from 'react-cookie';
-import { instanceOf } from 'prop-types';
-import { service } from '../../manager';
+import {FormattedMessage} from 'react-intl';
+import { Login, Logout } from '../../component';
+import { service, util } from '../../manager';
 
 class NavToolContianer extends Component {
-  static propTypes = {
-    cookies: instanceOf(Cookies).isRequired
-  };
+
+  constructor() {
+    super();
+    this.state = {};
+  }
 
   componentWillMount() {
-    const { cookies, history } = this.props;
+    const { history } = this.props;
+    console.log(util.getCookie('auth'))
     service.tokenSignin({}).then((data) => {
       console.log(data)
       // if(data.result === 'signin') {
@@ -19,6 +22,13 @@ class NavToolContianer extends Component {
   };
 
   render() {
+    let login = <Logout />;
+    // let member = this.props.member;
+    // if(member) {
+    //   login = <Login />
+    // }else {
+    //   login = <Logout />
+    // }
     return (
       /*
       <div className="container" id="nav-container">
@@ -61,13 +71,10 @@ class NavToolContianer extends Component {
               <li><a href="#">HOME</a></li>
               <li><a href="#/account/profile/2">PROFILE</a></li>
               <li><a href="#/project/list">PROJECTS</a></li>
-              <li><a href="#">NEWS</a></li>
+              <li><a href="#"><FormattedMessage id='global.msg' description='say hello to Howard.' defaultMessage='NEWS' /></a></li>
               <li><a href="#">ABOUT US</a></li>
             </ul>
-            <ul className="nav navbar-nav navbar-right sign">
-              <li><a href="#/sign/up">SIGN UP</a></li>
-              <li><a href="#/sign/in">SIGN IN</a></li>
-            </ul>
+            {login}
           </div>
         </div>
       </nav>
@@ -75,4 +82,4 @@ class NavToolContianer extends Component {
   }
 }
 
-export default withCookies(NavToolContianer);
+export default NavToolContianer;

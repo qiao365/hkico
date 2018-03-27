@@ -13,7 +13,7 @@ class PageComponent extends PureComponent {
       <section className="pro_info container">
         <link href="../css/product.css" rel="stylesheet"/>
         <div className="pro_top">
-          <span>Explore <i> 23 </i> projects</span>
+          <span>Explore <i> {this.props.count} </i> projects</span>
         </div>
         <div className="pro_list row">
           {this.props.children}

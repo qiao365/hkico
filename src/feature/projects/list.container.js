@@ -1,30 +1,33 @@
 import React, { Component } from 'react';
-import { remoteGetProjectList } from '../../manager';
+import { service, util } from '../../manager';
 import { Page } from '../../component';
 import { ProjectItem } from './';
 
 class ProjectListPage extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      projectList: []
+    };
   }
   componentWillMount() {
-    this.setState({
-      projectList: remoteGetProjectList(10)
-    });
+    service.findProjects().then((data) => {
+      this.setState({
+        projectList: data.list,
+        count: data.count
+      });
+    })
   }
 
   handleItemClick = (item) => {
     const { history } = this.props;
-    console.log(item);
     history.push(`/project/show/${item.id || 0}`);
   }
 
   render() {
-    const { projectList } = this.state;
-    // console.log('project list', projectList, remoteGetProjectList);
+    const { projectList, count } = this.state;
     return (
-      <Page>
+      <Page count={count}>
         {
           projectList.map((projectItem, idx) => {
             return (

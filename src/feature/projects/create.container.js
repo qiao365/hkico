@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { HorizontalInputText, Button, Page } from '../../component';
-
-const projectField = {
-  ...(['projectName', 'projectShort', 'projectSummary', 'projectUrl', 'paperUrl', 'teamSummary'])
-}
+import { service, util } from '../../manager';
 
 class CreateProjectPage extends Component {
 
@@ -12,30 +9,41 @@ class CreateProjectPage extends Component {
     this.state = {};
   }
 
-  onTextFieldNameChange = (fieldKey) => (event) => {
+  onClick = (event) => {
+    const { history } = this.props;
+    service.newProject(this.state).then((data) => {
+      history.push("/");
+    })
+  }
+
+  onTextChange = (key) => (event) => {
     this.setState({
-      [fieldKey]: event.target.value
+      [key]: event.target.value
     });
   }
 
   render() {
-    const { projectName, projectShort, projectSummary, projectUrl, paperUrl, teamSummary } = projectField;
     return (
-      <Page>
-        <div className="login-form-container">
+      <div className="container">
+        <div className="main col-md-6 col-md-offset-3" action="/hkico/project/applyProject" method="post">
           <div className="form">
-            <HorizontalInputText type="text" label="项目名称" inputValue={this.state[projectName]} onchange={this.onTextFieldNameChange(projectName)} />
-            <HorizontalInputText type="text" label="简称" inputValue={this.state[projectShort]} onchange={this.onTextFieldNameChange(projectShort)} />
-            <HorizontalInputText type="text" label="项目描述" inputValue={this.state[projectSummary]} onchange={this.onTextFieldNameChange(projectSummary)} />
-            <HorizontalInputText type="text" label="项目网址" inputValue={this.state[projectUrl]} onchange={this.onTextFieldNameChange(projectUrl)} />
-            <HorizontalInputText type="text" label="白皮书" inputValue={this.state[paperUrl]} onchange={this.onTextFieldNameChange(paperUrl)} />
-            <HorizontalInputText type="text" label="团队介绍" inputValue={this.state[teamSummary]} onchange={this.onTextFieldNameChange(teamSummary)} />
+            <HorizontalInputText type="text" label="项目名称" onchange={this.onTextChange('name')} />
+            <HorizontalInputText type="text" label="简称" onchange={this.onTextChange('abbr')} />
+            <HorizontalInputText type="text" label="项目描述" onchange={this.onTextChange('desc')} />
+            <HorizontalInputText type="text" label="项目网址" onchange={this.onTextChange('url')} />
+            <HorizontalInputText type="text" label="白皮书" onchange={this.onTextChange('whitePaper')} />
+            <HorizontalInputText type="text" label="ETH地址" onchange={this.onTextChange('address')} />
+            <HorizontalInputText type="text" label="代币地址" onchange={this.onTextChange('tokenAddress')} />
+            <HorizontalInputText type="text" label="代币比例" onchange={this.onTextChange('tokenScale')} />
+            <HorizontalInputText type="text" label="众筹额度" onchange={this.onTextChange('total')} />
+            <HorizontalInputText type="text" label="结束时间(分钟)" onchange={this.onTextChange('time')} />
+            <HorizontalInputText type="text" label="备注" onchange={this.onTextChange('remarks')} />
           </div>
           <div className="action-group">
-            <Button label="确定"  className="btn btn-primary"/>
+            <Button type="button" label="确定" className="btn btn-primary" clickHandle={this.onClick} />
           </div>
         </div>
-      </Page>
+      </div>
     )
   }
 }

@@ -31,7 +31,7 @@ class SignInPage extends Component {
   confirmSignIn = () => {
     const { history } = this.props;
     service.signin(this.state).then((data) => {
-      // console.log(data)
+      this.setState({member: data.member});
       history.push("/project/list");
     }).catch((error) => {
       console.log(error);
